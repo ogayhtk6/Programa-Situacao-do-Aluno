@@ -1,0 +1,44 @@
+
+<!Doctype html>
+<html>
+<hend>
+      <meta chaset="UTF-8">
+      <meta name="viewport" content="width=device-width initial-scale=1.0">
+      <title>Média do Aluno</title>
+</hend>
+<body>
+      <h1> Programa  Situação do Aluno</h1>
+      <p>Nome do Aluno <input type="text" id="inAl"></p>
+      <p>Digite sua 1º nota <input type="text" id="inN1"> </p>
+      <p>Digite sua 2º nota <input type="text" id="inN2"> </p>
+      <p><input type="button" value="Exibir média e Situação" id="btEx"></p>
+      <h3 id="outMed"></h3>
+      <h3 id="outSit"></h3>
+</body>
+
+<script>
+function MediaDoAluno(){
+      var inAl = document.getElementById("inAl");
+      var inN1 = document.getElementById("inN1");
+      var inN2 = document.getElementById("inN2");
+      var outMed = document.getElementById("outMed");
+      var outSit = document.getElementById("outSit");
+      
+      var nome = inAl.value;
+      var n1 = Number(inN1.value);
+      var n2 = Number(inN2.value);
+      
+           var media = (n1 + n2)/2;
+           outMed.textContent="Média das notas é : " + media.toFixed(1);
+      
+      if (media >= 7){outSit.textContent="Parabéns " + nome + " você foi Aprovado(a)"; outSit.style.color="blue";}
+      else if (media >=4){outSit.textContent="Atenção " + nome +". você está no exame"; outSit.style.color ="green"}
+      else { outSit.textContent="Ops " + nome + "você foi Reprovado(a)"; outSit.style.color="red";}
+      }
+      var btEx = document.getElementById("btEx");
+      btEx.addEventListener("click",MediaDoAluno)
+ 
+</script>
+</html>
+
+
